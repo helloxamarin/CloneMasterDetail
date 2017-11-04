@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using CloneMasterDetail.Models;
+using CloneMasterDetail.Views;
 using Xamarin.Forms;
 
 namespace CloneMasterDetail.ViewModels
@@ -20,7 +21,11 @@ namespace CloneMasterDetail.ViewModels
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            //TODO MessagingCenter.Subscribe ...
+            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            {
+                Items.Add(item);
+                await DataStore.AddItemAsync(item);
+            });
         }
 
         private async Task ExecuteLoadItemsCommand()
