@@ -5,7 +5,7 @@ using System.Text;
 using CloneMasterDetail.Views;
 using Xamarin.Forms;
 
-namespace CloneMasterDetail
+namespace CloneMasterDetail.Views
 {
 	public class MainPage : TabbedPage
 	{
