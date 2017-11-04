@@ -1,4 +1,5 @@
 ﻿using System;
+using CloneMasterDetail.Models;
 using CloneMasterDetail.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,13 +18,18 @@ namespace CloneMasterDetail.Views
 		    BindingContext = _viewModel = new ItemsViewModel();
 		}
 
-	    private void ItemsListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+	    private async void ItemsListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	    {
-            //TODO
-	        throw new NotImplementedException();
-	    }
+	        if (!(e.SelectedItem is Item item))
+	            return;
 
-	    private void AddItem_OnClicked(object sender, EventArgs e)
+	        await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+
+	        // Manually deselect item
+	        ItemsListView.SelectedItem = null;
+        }
+
+	    private async void AddItem_OnClicked(object sender, EventArgs e)
 	    {
             //TODO
 	        throw new NotImplementedException();
