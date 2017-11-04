@@ -31,8 +31,7 @@ namespace CloneMasterDetail.Views
 
 	    private async void AddItem_OnClicked(object sender, EventArgs e)
 	    {
-            //TODO
-	        throw new NotImplementedException();
+	        await Navigation.PushAsync(new NewItemPage());
 	    }
 
 	    protected override void OnAppearing()
