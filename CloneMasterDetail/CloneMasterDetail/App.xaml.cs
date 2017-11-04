@@ -13,7 +13,7 @@ namespace CloneMasterDetail
 		{
 			InitializeComponent();
 
-			MainPage = new CloneMasterDetail.Views.AboutPage();
+			MainPage = new CloneMasterDetail.Views.ItemsPage();
 		}
 
 		protected override void OnStart ()
