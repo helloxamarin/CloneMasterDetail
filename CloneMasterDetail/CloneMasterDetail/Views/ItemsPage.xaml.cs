@@ -40,5 +40,10 @@ namespace CloneMasterDetail.Views
 	        if (_viewModel.Items.Count == 0)
                 _viewModel.LoadItemsCommand.Execute(null);
 	    }
+
+	    private async void MemoItem_OnClicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new MemoPage());
+        }
 	}
 }

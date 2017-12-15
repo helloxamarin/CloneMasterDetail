@@ -6,6 +6,7 @@
              x:Name="BrowseItemsPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_OnClicked"></ToolbarItem>
+        <ToolbarItem Text="Memo" Clicked="MemoItem_OnClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
