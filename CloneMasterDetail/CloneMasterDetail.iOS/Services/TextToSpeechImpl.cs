@@ -1,5 +1,4 @@
-﻿using System;
-using AVFoundation;
+﻿using AVFoundation;
 using CloneMasterDetail.Services;
 using CloneMasterDetail.iOS.Services;
 using Xamarin.Forms;

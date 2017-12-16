@@ -1,5 +1,4 @@
-﻿using System;
-using Android.Speech.Tts;
+﻿using Android.Speech.Tts;
 using CloneMasterDetail.Droid.Services;
 using CloneMasterDetail.Services;
 using Xamarin.Forms;
@@ -9,19 +8,19 @@ namespace CloneMasterDetail.Droid.Services
 {
     public class TextToSpeechImpl : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
-        TextToSpeech speaker;
-        string toSpeak;
+        private TextToSpeech _speaker;
+        private string _toSpeak;
 
         public void Speak(string text)
         {
-            toSpeak = text;
-            if (speaker == null)
+            _toSpeak = text;
+            if (_speaker == null)
             {
-                speaker = new TextToSpeech(Forms.Context, this);
+                _speaker = new TextToSpeech(Forms.Context, this);
             }
             else
             {
-                speaker.Speak(toSpeak, QueueMode.Flush, null, null);
+                _speaker.Speak(_toSpeak, QueueMode.Flush, null, null);
             }
         }
 
@@ -29,7 +28,7 @@ namespace CloneMasterDetail.Droid.Services
         {
             if (status.Equals(OperationResult.Success))
             {
-                speaker.Speak(toSpeak, QueueMode.Flush, null, null);
+                _speaker.Speak(_toSpeak, QueueMode.Flush, null, null);
             }
         }
     }

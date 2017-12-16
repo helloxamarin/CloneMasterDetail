@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CloneMasterDetail.Models;
 using CloneMasterDetail.Services;
 using CloneMasterDetail.ViewModels;
@@ -37,7 +33,7 @@ namespace CloneMasterDetail.Views
 	        BindingContext = viewModel;
         }
 
-        void UnderlineLabel_Tapped(object sender, System.EventArgs e)
+        private void UnderlineLabel_Tapped(object sender, EventArgs e)
         {
             var label = sender as UnderlineLabel;
             DependencyService.Get<ITextToSpeech>().Speak(label.Text);
