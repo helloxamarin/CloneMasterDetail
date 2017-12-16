@@ -35,8 +35,10 @@ namespace CloneMasterDetail.Views
 
         private void UnderlineLabel_Tapped(object sender, EventArgs e)
         {
-            var label = sender as UnderlineLabel;
-            DependencyService.Get<ITextToSpeech>().Speak(label.Text);
+            if (sender is UnderlineLabel label)
+            {
+                DependencyService.Get<ITextToSpeech>().Speak(label.Text);
+            }
         }
     }
 }

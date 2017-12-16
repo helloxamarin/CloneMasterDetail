@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CloneMasterDetail.UWP.Renderers;
+﻿using CloneMasterDetail.UWP.Renderers;
 using CloneMasterDetail.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
-
-
 
 [assembly: ExportRenderer(typeof(MemoPage), typeof(MemoPageRenderer))]
 namespace CloneMasterDetail.UWP.Renderers
@@ -19,8 +12,8 @@ namespace CloneMasterDetail.UWP.Renderers
         {
             base.OnElementChanged(e);
 
-            var element = e.NewElement as ContentPage;
-            element.Content = null;
+            if (e.NewElement is ContentPage element)
+                element.Content = null;
             
             this.SetNativeControl(new InkCanvasMemoPage());
         }
