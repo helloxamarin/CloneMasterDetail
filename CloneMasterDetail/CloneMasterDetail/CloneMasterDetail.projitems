@@ -38,7 +38,7 @@
       <DependentUpon>NewItemPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Services\TextToSpeach.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ITextToSpeach.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
