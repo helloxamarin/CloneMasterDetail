@@ -1,8 +1,7 @@
-﻿using System;
-namespace CloneMasterDetail.Services
+﻿namespace CloneMasterDetail.Services
 {
     public interface ITextToSpeech
     {
-        void Speak(String text);
+        void Speak(string text);
     }
 }
