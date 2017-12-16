@@ -1,12 +1,13 @@
 ﻿using System;
 using Android.Speech.Tts;
+using CloneMasterDetail.Droid.Services;
 using CloneMasterDetail.Services;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(TextToSpeachImpl))]
+[assembly: Dependency(typeof(TextToSpeechImpl))]
 namespace CloneMasterDetail.Droid.Services
 {
-    public class TextToSpeachImpl : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
+    public class TextToSpeechImpl : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         TextToSpeech speaker;
         string toSpeak;

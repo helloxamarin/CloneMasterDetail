@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CloneMasterDetail.Models;
+using CloneMasterDetail.Services;
 using CloneMasterDetail.ViewModels;
+using CloneMasterDetail.Views.Components;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,8 +15,8 @@ namespace CloneMasterDetail.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ItemDetailPage : ContentPage
 	{
-	    // Note - The Xamarin.Forms Previewer requires a default, parameterless constructor to render a page.
-	    public ItemDetailPage()
+        // Note - The Xamarin.Forms Previewer requires a default, parameterless constructor to render a page.
+        public ItemDetailPage()
 	    {
 	        InitializeComponent();
 
@@ -33,6 +35,12 @@ namespace CloneMasterDetail.Views
 	        InitializeComponent();
 
 	        BindingContext = viewModel;
-	    }
+        }
+
+        void UnderlineLabel_Tapped(object sender, System.EventArgs e)
+        {
+            var label = sender as UnderlineLabel;
+            DependencyService.Get<ITextToSpeech>().Speak(label.Text);
+        }
     }
 }

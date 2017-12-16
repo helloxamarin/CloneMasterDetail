@@ -1,8 +1,10 @@
 ﻿using System;
 using AVFoundation;
 using CloneMasterDetail.Services;
+using CloneMasterDetail.iOS.Services;
+using Xamarin.Forms;
 
-[assembly: Dependency(typeof(TextToSpeachImpl))]
+[assembly: Dependency(typeof(TextToSpeechImpl))]
 namespace CloneMasterDetail.iOS.Services
 {
     public class TextToSpeechImpl : ITextToSpeech

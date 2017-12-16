@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CloneMasterDetail.Services
 {
-    public interface TextToSpeach
+    public interface ITextToSpeech
     {
         void Speak(String text);
     }
